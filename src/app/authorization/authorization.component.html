@@ -1,0 +1,10 @@
+<h2>authorization complete</h2>
+<h3>Code: {{code}}</h3>
+<div>
+  <button class="btn btn-primary" (click)="loadLogin()">Open Login</button>
+</div>
+<form action="{{oauthService.tokenUrl}}" method="post">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  <button type="submit" class="btn btn-primary" formtarget="_blank">Submit</button>
+</form>
