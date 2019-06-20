@@ -32,4 +32,7 @@ export class AuthorizationComponent implements OnInit {
   loadLogin() {
     this.oauthService.getLoginForm();
   }
+  getToken() {
+    this.oauthService.getLoginForm2(this.oauthService.dribble);
+  }
 }

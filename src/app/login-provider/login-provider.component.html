@@ -1,0 +1,10 @@
+
+<div>
+  <button class="btn btn-primary" (click)="loadDribble()">Open Dribble Login</button>
+</div>
+<div>
+  <button class="btn btn-primary" (click)="f5Login()">Open F5 Login</button>
+</div>
+<form action={{oauthService.f5.getURLAutorization()}} method="post" target="=_blank">
+  <input type="submit" value="post">
+</form>

@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { OauthService } from '@app/oauth.service';
 import { AuthenticationService } from '@app/_services';
 
 
 @Injectable({ providedIn: 'root' })
-export class AuthGuard implements CanActivate {
+export class DribbleGuard implements CanActivate {
     constructor(
         private router: Router,
         private route: ActivatedRoute,
@@ -19,8 +19,11 @@ export class AuthGuard implements CanActivate {
             // authorised so return true
             return true;
         }
+        if (this.oauthService.authtoken == null) {
+            this.oauthService.getAuthorizationToken(this.oauthService.dribble);
+        }
         // not logged in so redirect to login page with the return url
-        this.router.navigate(['/loginprovider']); // , { queryParams: { returnUrl: state.url } });
+        // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
         return false;
     }
 }

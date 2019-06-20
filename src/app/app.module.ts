@@ -11,6 +11,7 @@ import { RegisterComponent } from './register';
 import { AlertComponent } from './_components';
 // used to create fake backend
 import { ErrorInterceptor, fakeBackendProvider, JwtInterceptor } from './_helpers';
+import { LoginProviderComponent } from './login-provider/login-provider.component';
 
 @NgModule({
     imports: [
@@ -26,6 +27,7 @@ import { ErrorInterceptor, fakeBackendProvider, JwtInterceptor } from './_helper
         HomeComponent,
         LoginComponent,
         RegisterComponent,
+        LoginProviderComponent,
         AuthorizationComponent],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
